@@ -12,7 +12,7 @@ export const Heros = () => {
           className="object-contain"
         />
       </div>
-      <div className="relative mt-5 hidden h-[400px] w-[400px] md:block">
+      <div className="relative mt-5 hidden h-[400px] w-[400px] dark:hidden md:block">
         <Image src="/folder.svg" alt="documents Image" fill />
       </div>
     </div>
