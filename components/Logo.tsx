@@ -11,7 +11,7 @@ export const Logo = () => {
   return (
     <div className="hidden items-center gap-2 md:flex">
       <Image src="logo2.svg" alt="logo" height="40" width="40" />
-      <p className={cn('font-semibold', font.className)}>Jotion</p>
+      <p className={cn('text-2xl font-semibold', font.className)}>Jotion</p>
     </div>
   )
 }
