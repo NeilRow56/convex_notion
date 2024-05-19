@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/providers/ThemeProvider'
-import { ToastContainer } from 'react-toastify'
+import { Toaster } from 'sonner'
 import { ConvexClientProvider } from '@/providers/convex-provider'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -42,18 +42,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
-            <ToastContainer
-              position="bottom-right"
-              autoClose={1000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="light"
-            />
+            <Toaster richColors position="bottom-right" />
           </ThemeProvider>
         </ConvexClientProvider>
       </body>
