@@ -26,6 +26,7 @@ import {
 import Item from './Item'
 import { toast } from 'sonner'
 import { DocumentList } from './DocumentList'
+import TrashBox from './TrashBox'
 
 const Navigation = () => {
   const pathname = usePathname()
@@ -161,7 +162,7 @@ const Navigation = () => {
               className="w-72 p-0"
               side={isMobile ? 'bottom' : 'right'}
             >
-              Trash Box
+              <TrashBox />
             </PopoverContent>
           </Popover>
         </div>
