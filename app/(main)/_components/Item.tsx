@@ -111,7 +111,7 @@ const Item = ({
       {!!id && (
         <div
           role="button"
-          className="mr-1 h-full rounded-sm hover:bg-neutral-300 dark:bg-neutral-600"
+          className="mr-1 h-full rounded-sm hover:bg-neutral-300 dark:hover:bg-neutral-600"
           onClick={handleExpand}
         >
           <ChevronIcon className="mr-2 h-[18px] shrink-0 text-muted-foreground/50" />
@@ -126,7 +126,7 @@ const Item = ({
       <span className="truncate">{label}</span>
       {isSearch && (
         <kbd className="pointer-events-none ml-auto inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
-          <span className="text-xs">⌘ </span>K
+          <span className="text-xs">⌘ </span>J
         </kbd>
       )}
       {!!id && (
