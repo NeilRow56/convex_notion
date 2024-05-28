@@ -24,7 +24,14 @@ const DocumentPage = () => {
 
   return (
     <div className="flex h-full flex-col items-center justify-center space-y-4">
-      <Image src="/docs1.svg" height="300" width="300" alt="Document" />
+      <Image
+        src="/docs1.svg"
+        height="300"
+        width="300"
+        priority
+        alt="Document"
+        style={{ height: 'auto' }}
+      />
       <h2 className="text-lg font-medium text-primary">
         Welcome to {user?.firstName}&apos;s Jotion
       </h2>
