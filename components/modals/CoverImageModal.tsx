@@ -2,7 +2,7 @@
 
 import { Dialog, DialogContent, DialogHeader } from '@/components/ui/dialog'
 import { SingleImageDropzone } from '../SingleImageDropzone'
-import { useCoverImage } from '@/hooks/use-cove-image'
+import { useCoverImage } from '@/hooks/use-cover-image'
 import { useState } from 'react'
 import { useEdgeStore } from '@/lib/edgestore'
 import { useMutation } from 'convex/react'
@@ -30,10 +30,20 @@ export const CoverImageModal = () => {
       setIsSubmitting(true)
       setFile(file)
 
-      const res = await edgestore.publicFiles.upload({
-        file,
-      })
+      let res
 
+      if (coverImage.url) {
+        res = await edgestore.publicFiles.upload({
+          file,
+          options: {
+            replaceTargetUrl: coverImage.url,
+          },
+        })
+      } else {
+        res = await edgestore.publicFiles.upload({
+          file,
+        })
+      }
       await update({
         id: params.documentId as Id<'documents'>,
         coverImage: res.url,
