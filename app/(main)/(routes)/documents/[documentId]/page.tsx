@@ -8,7 +8,8 @@ import { Toolbar } from '@/components/Toolbar'
 import { Cover } from '@/components/Cover'
 import { Skeleton } from '@/components/ui/skeleton'
 
-import { Editor } from '@/components/Editor'
+import dynamic from 'next/dynamic'
+import { useMemo } from 'react'
 
 interface DocumentIdPageProps {
   params: {
@@ -17,6 +18,10 @@ interface DocumentIdPageProps {
 }
 
 const DocumentIdPage = ({ params }: DocumentIdPageProps) => {
+  const Editor = useMemo(
+    () => dynamic(() => import('@/components/Editor'), { ssr: false }),
+    []
+  )
   const document = useQuery(api.documents.getById, {
     documentId: params.documentId,
   })
